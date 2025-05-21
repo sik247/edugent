@@ -17,9 +17,10 @@ if not YOUTUBE_API_KEY or not OPENAI_API_KEY:
     st.stop()
 
 # ─── Load problem.json ───
-with open("problem.json", "r", encoding="utf-8") as f:
+with open(os.path.join(os.path.dirname(__file__), "problem.json"), "r", encoding="utf-8") as f:
     problem_data = json.load(f)
 problem_dict = {item["index"]: item for item in problem_data}
+
 # ─── YouTube Search ───
 youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
 
