@@ -1,0 +1,4 @@
+openai-agents
+openai
+google-api-python-client
+streamlit
